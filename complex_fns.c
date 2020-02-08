@@ -43,8 +43,23 @@ Complex complex_mult(Complex c1, Complex c2) {
 
 Complex complex_div(Complex c1, Complex c2) {
 	double denom = magnitude(c2)*magnitude(c2);
+	if (denom == 0) {
+		printf("Please don't divide by zero, it hurts my processor! My GPU!!!");
+		return 1;
+	}
+		//added a way so there is no division by zero.
 	Complex c = complex_mult(c1, complex_conj(c2));
 	c.real /= denom;
 	c.imag /= denom;
 	return c;
 }
+
+void world(Complex(*fn_world)(Complex, Complex), Complex x, Complex y) {
+	Complex c = fn_world(x, y);
+	print_complex(c);
+}
+void Hat(double(*fn_world)(Complex), Complex cat) {
+	double c = fn_world(cat);
+	printf("c is: %lf\n", c); 
+}
+
