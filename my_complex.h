@@ -20,5 +20,5 @@ double magnitude(Complex c);
 double phase(Complex c);
 
 void world(Complex(*fn_world)(Complex,Complex), Complex x, Complex y);
-void Hat(double (*fn_world)(Complex), Complex cat);
+void Hat(double (*fn_world1)(Complex), Complex cat);
 
